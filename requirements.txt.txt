@@ -5,3 +5,7 @@ base64
 os
 json
 uvicorn
+django
+gunicorn
+django-heroku
+requests
