@@ -202,9 +202,6 @@ async def take_picture(pc_name: str):
 
         await asyncio.sleep(5)  # sleep 5 seconds for other commands to come
 
-
-
-
 if __name__ == '__main__':
     # starting the server
     os.system("uvicorn App_FastAPI_Server:app --reload --port 8000")
