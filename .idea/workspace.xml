@@ -2,72 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb967a0-73d9-4098-b37e-3ebed2b4aa4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Virus.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App_FastAPI_Client_ NOT_NEEDED.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App_FastAPI_Server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/KeyLogger.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Socket.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/StartDoingDamage.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/TakePicture.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Virus.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.command.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.read.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.write.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/Virus.lastbuildstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/link.command.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/link.read.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/link.write.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/escapi.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/escapi.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/main.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/main.obj.enc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/socket.obj.enc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/startdoingdamage.obj.enc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/utilities.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/vc142.idb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debug/vc142.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/KeyLogger.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/KeyLogger.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/KeyLogger.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/CL.command.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/CL.read.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/CL.write.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/Virus.lastbuildstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/Virus.write.1u.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/link.command.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/link.read.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/link.write.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/escapi.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/main.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Release/vc142.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Socket.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Socket.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StartDoingDamage.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StartDoingDamage.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TakePicture.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TakePicture.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Virus.vcxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Virus.vcxproj.filters" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Virus.vcxproj.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/escapi.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/escapi.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/escapi.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/every_thing_written.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mswsock.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc_name.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture.i64" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_picture.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_FastAPI_Server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
