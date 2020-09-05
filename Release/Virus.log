@@ -1,0 +1,7 @@
+﻿  KeyLogger.c
+  main.c
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 5 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Virus.vcxproj -> C:\Users\a\Desktop\C\Virus\Virus\Release\Virus.exe

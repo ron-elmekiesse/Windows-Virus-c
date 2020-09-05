@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdb967a0-73d9-4098-b37e-3ebed2b4aa4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Virus.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App_FastAPI_Client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/KeyLogger.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Socket.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/StartDoingDamage.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/TakePicture.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Virus.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/Virus.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/Virus.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/escapi.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/escapi.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/main.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/main.obj.enc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/socket.obj.enc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/startdoingdamage.obj.enc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/utilities.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/vc142.idb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debug/vc142.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyLogger.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/KeyLogger.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/Virus.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/Virus.write.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/Virus.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/escapi.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/main.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Release/vc142.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Socket.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Socket.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StartDoingDamage.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StartDoingDamage.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TakePicture.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TakePicture.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Virus.vcxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Virus.vcxproj.filters" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Virus.vcxproj.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/escapi.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/escapi.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/escapi.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/every_thing_written.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mswsock.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc_name.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture.i64" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp_picture.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fPhXm3zC0ELVRVFLWXqQZVkAvI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/App_Flask.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.App_FastAPI_Server">
+    <configuration name="App_FastAPI" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Virus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/App_FastAPI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="App_FastAPI_Client" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Virus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/App_FastAPI_Client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="App_FastAPI_Server" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Virus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/App_FastAPI_Server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="App_FastAPI_Virus" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Virus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/App_FastAPI_Virus.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="applications" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Virus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/fastapi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/fastapi/applications.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="datastructures" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Virus" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/starlette" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/starlette/datastructures.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.App_FastAPI_Client" />
+      <item itemvalue="Python.App_FastAPI_Server" />
+      <item itemvalue="Python.App_FastAPI_Virus" />
+      <item itemvalue="Python.App_FastAPI" />
+      <item itemvalue="Python.applications" />
+      <item itemvalue="Python.datastructures" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb967a0-73d9-4098-b37e-3ebed2b4aa4f" name="Default Changelist" comment="" />
+      <created>1596125676910</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596125676910</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599308166617">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599308166617" />
+    <state x="548" y="171" key="FileChooserDialogImpl" timestamp="1596125822737">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596125822737" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1599308172025">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599308172025" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1599308172025">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599308172025" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1599308172024">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599308172024" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1599308172025">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599308172025" />
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1599082190028">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599082190028" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1599082190028">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599082190028" />
+    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1599082190028">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599082190028" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1599082190028">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599082190028" />
+    <state x="279" y="58" key="SettingsEditor" timestamp="1596125834882">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1596125834882" />
+    <state x="477" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1598132449619">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="477" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1598132449619" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599254231318">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599254231318" />
+  </component>
+</project>
