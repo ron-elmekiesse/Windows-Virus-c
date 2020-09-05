@@ -8,7 +8,8 @@
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App_FastAPI_Client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App_FastAPI_Client_ NOT_NEEDED.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App_FastAPI_Server.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DB.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Debug/KeyLogger.obj" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Debug/Socket.obj" afterDir="false" />
@@ -84,7 +85,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1fPhXm3zC0ELVRVFLWXqQZVkAvI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -257,6 +260,9 @@
       <updated>1596125676910</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599308166617">
