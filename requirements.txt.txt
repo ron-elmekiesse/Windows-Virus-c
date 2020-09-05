@@ -1,0 +1,7 @@
+fastapi
+pydantic
+asyncio
+base64
+os
+json
+uvicorn

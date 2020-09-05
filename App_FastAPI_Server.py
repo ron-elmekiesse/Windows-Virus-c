@@ -1,5 +1,3 @@
-from typing import Optional
-
 from fastapi import FastAPI, Request
 
 from pydantic import BaseModel
@@ -9,7 +7,6 @@ import base64
 from os import path
 import os
 import json
-import time
 from fastapi.responses import FileResponse
 
 app = FastAPI()
@@ -204,5 +201,5 @@ async def take_picture(pc_name: str):
 
 if __name__ == '__main__':
     # starting the server
-    os.system("uvicorn App_FastAPI_Server:app --reload --port 8000")
+    #os.system("uvicorn App_FastAPI_Server:app --reload --port 8000")
     loop.run_forever()

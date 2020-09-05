@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb967a0-73d9-4098-b37e-3ebed2b4aa4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Procfile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_FastAPI_Server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,30 +203,30 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599308166617">
+    <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599330645753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599308166617" />
+    <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599330645753" />
     <state x="548" y="171" key="FileChooserDialogImpl" timestamp="1596125822737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596125822737" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1599308172025">
+    <state width="746" height="210" key="GridCell.Tab.0.bottom" timestamp="1599330701451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599308172025" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1599308172025">
+    <state width="746" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599330701451" />
+    <state width="746" height="210" key="GridCell.Tab.0.center" timestamp="1599330701451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599308172025" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1599308172024">
+    <state width="746" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599330701451" />
+    <state width="746" height="210" key="GridCell.Tab.0.left" timestamp="1599330701451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599308172024" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1599308172025">
+    <state width="746" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599330701451" />
+    <state width="746" height="210" key="GridCell.Tab.0.right" timestamp="1599330701451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599308172025" />
+    <state width="746" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599330701451" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1599082190028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
