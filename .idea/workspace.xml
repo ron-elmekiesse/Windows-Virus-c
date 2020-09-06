@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb967a0-73d9-4098-b37e-3ebed2b4aa4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Procfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_FastAPI_Server.py" afterDir="false" />
     </list>
@@ -166,10 +164,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.App_FastAPI" />
       <item itemvalue="Python.App_FastAPI_Client" />
       <item itemvalue="Python.App_FastAPI_Server" />
       <item itemvalue="Python.App_FastAPI_Virus" />
-      <item itemvalue="Python.App_FastAPI" />
       <item itemvalue="Python.applications" />
       <item itemvalue="Python.datastructures" />
     </list>
