@@ -1,1 +1,1 @@
-web: gunicorn App_FastAPI_Server:app
+web: uvicorn App_FastAPI_Server:app --host=0.0.0.0 --port=${PORT:-5000}

