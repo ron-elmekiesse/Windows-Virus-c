@@ -1,43 +1,14 @@
-﻿  KeyLogger.c
-C:\Users\a\Desktop\C\Virus\Virus\Virus\KeyLogger.c(54,13): warning C4047: 'function': 'DWORD' differs in levels of indirection from 'void *'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\KeyLogger.c(54,13): warning C4024: 'CreateFileA': different types for formal and actual parameter 3
-C:\Users\a\Desktop\C\Virus\Virus\Virus\KeyLogger.c(69,77): warning C4047: 'function': 'DWORD' differs in levels of indirection from 'void *'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\KeyLogger.c(69,77): warning C4024: 'SetWindowsHookExW': different types for formal and actual parameter 4
-C:\Users\a\Desktop\C\Virus\Virus\Virus\KeyLogger.c(155,40): warning C4244: '=': conversion from 'DWORD' to 'BYTE', possible loss of data
-C:\Users\a\Desktop\C\Virus\Virus\Virus\KeyLogger.c(212,41): warning C4244: '=': conversion from 'DWORD' to 'BYTE', possible loss of data
-C:\Users\a\Desktop\C\Virus\Virus\Virus\KeyLogger.c(234,36): warning C4244: '=': conversion from 'DWORD' to 'BYTE', possible loss of data
-C:\Users\a\Desktop\C\Virus\Virus\Virus\KeyLogger.c(256,41): warning C4244: '=': conversion from 'DWORD' to 'BYTE', possible loss of data
-  Socket.c
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(60,52): warning C4047: 'function': 'char *' differs in levels of indirection from 'char **'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(60,52): warning C4024: 'get_command': different types for formal and actual parameter 2
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(212,68): warning C4047: 'function': 'DWORD' differs in levels of indirection from 'void *'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(212,68): warning C4024: 'CreateFileA': different types for formal and actual parameter 3
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(225,36): warning C4133: 'function': incompatible types - from 'char [16]' to 'LPWSTR'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(262,5): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(262,5): warning C4024: 'send': different types for formal and actual parameter 4
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(322,1): warning C4028: formal parameter 2 different from declaration
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(344,5): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(344,5): warning C4024: 'send': different types for formal and actual parameter 4
-  StartDoingDamage.c
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(54,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(109,19): warning C4013: 'TakePicture' undefined; assuming extern returning int
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(202,45): warning C4022: 'GetFileSize': pointer mismatch for actual parameter 1
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(209,40): warning C4022: 'ReadFile': pointer mismatch for actual parameter 1
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(265,2): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(265,2): warning C4024: 'send': different types for formal and actual parameter 4
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(283,43): warning C4022: 'CloseHandle': pointer mismatch for actual parameter 1
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(372,48): warning C4022: 'GetFileSize': pointer mismatch for actual parameter 1
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(379,43): warning C4022: 'ReadFile': pointer mismatch for actual parameter 1
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(416,2): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(416,2): warning C4024: 'send': different types for formal and actual parameter 4
-C:\Users\a\Desktop\C\Virus\Virus\Virus\StartDoingDamage.c(434,46): warning C4022: 'CloseHandle': pointer mismatch for actual parameter 1
-  TakePicture.c
-  escapi.c
-  main.c
-  utilities.c
-C:\Users\a\Desktop\C\Virus\Virus\Virus\utilities.c(77,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\a\Desktop\C\Virus\Virus\Virus\utilities.c(95,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\a\Desktop\C\Virus\Virus\Virus\utilities.c(141,1): warning C4028: formal parameter 1 different from declaration
-C:\Users\a\Desktop\C\Virus\Virus\Virus\utilities.c(141,1): warning C4028: formal parameter 3 different from declaration
-  Generating Code...
+﻿  Socket.c
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(67,52): warning C4047: 'function': 'char *' differs in levels of indirection from 'char **'
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(67,52): warning C4024: 'get_command': different types for formal and actual parameter 2
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(136,10): warning C4101: 'ipstringbuffer': unreferenced local variable
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(131,21): warning C4101: 'hints': unreferenced local variable
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(133,25): warning C4101: 'sockaddr_ipv4': unreferenced local variable
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(134,16): warning C4101: 'sockaddr_ip': unreferenced local variable
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(320,36): warning C4133: 'function': incompatible types - from 'char [16]' to 'LPWSTR'
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(356,5): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(356,5): warning C4024: 'send': different types for formal and actual parameter 4
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(407,1): warning C4028: formal parameter 2 different from declaration
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(427,5): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(427,5): warning C4024: 'send': different types for formal and actual parameter 4
   Virus.vcxproj -> C:\Users\a\Desktop\C\Virus\Virus\Debug\Virus.exe

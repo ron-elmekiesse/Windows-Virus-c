@@ -1,1 +1,0 @@
-web:uvicorn App_FastAPI_Server:app --reload --port 8000

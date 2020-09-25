@@ -1,5 +1,6 @@
 #include "utilities.h"
 
+
 struct BASE_64 base_64_table[] = {
 	{'A', 0},
 	{'B', 1},

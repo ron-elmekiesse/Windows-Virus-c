@@ -2,14 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb967a0-73d9-4098-b37e-3ebed2b4aa4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_FastAPI_Client_ NOT_NEEDED.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/App_FastAPI_Server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-server-virus-commander/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/my-server-virus-commander/App_FastAPI_Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB.json" beforeDir="false" afterPath="$PROJECT_DIR$/DB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/KeyLogger.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/KeyLogger.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/Socket.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/Socket.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/StartDoingDamage.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/StartDoingDamage.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/TakePicture.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/TakePicture.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/Virus.log" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/Virus.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/Virus.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/Virus.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/Virus.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/Virus.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/Virus.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/Virus.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/escapi.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/escapi.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/socket.obj.enc" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/socket.obj.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/utilities.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/utilities.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Socket.c" beforeDir="false" afterPath="$PROJECT_DIR$/Socket.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StartDoingDamage.c" beforeDir="false" afterPath="$PROJECT_DIR$/StartDoingDamage.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/every_thing_written.txt" beforeDir="false" afterPath="$PROJECT_DIR$/every_thing_written.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-server-virus-commander" beforeDir="false" afterPath="$PROJECT_DIR$/my-server-virus-commander" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc_name.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/picture.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.i64" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server_folder/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_folder/App_FastAPI_Server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_folder/my-server-virus-commander" beforeDir="false" afterPath="$PROJECT_DIR$/server_folder/my-server-virus-commander" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_folder/my-server-virus-commander/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_folder/my-server-virus-commander/App_FastAPI_Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_picture.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/temp_picture.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities.c" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities.h" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,22 +245,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596125822737" />
-    <state width="746" height="210" key="GridCell.Tab.0.bottom" timestamp="1599331003394">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1601042913222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599331003394" />
-    <state width="746" height="210" key="GridCell.Tab.0.center" timestamp="1599331003394">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601042913222" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1601042913221">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599331003394" />
-    <state width="746" height="210" key="GridCell.Tab.0.left" timestamp="1599331003393">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601042913221" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1601042913221">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599331003393" />
-    <state width="746" height="210" key="GridCell.Tab.0.right" timestamp="1599331003394">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601042913221" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1601042913222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599331003394" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601042913222" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1599082190028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
