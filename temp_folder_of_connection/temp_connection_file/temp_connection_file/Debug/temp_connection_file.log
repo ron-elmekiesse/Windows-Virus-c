@@ -1,0 +1,5 @@
+﻿  Connection.c
+C:\Users\a\Desktop\C\Virus\Virus\Virus\temp_folder_of_connection\temp_connection_file\temp_connection_file\Connection.c(136,5): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
+C:\Users\a\Desktop\C\Virus\Virus\Virus\temp_folder_of_connection\temp_connection_file\temp_connection_file\Connection.c(136,5): warning C4024: 'send': different types for formal and actual parameter 4
+C:\Users\a\Desktop\C\Virus\Virus\Virus\temp_folder_of_connection\temp_connection_file\temp_connection_file\Connection.c(20,16): warning C4101: 'sockaddr_ip': unreferenced local variable
+  temp_connection_file.vcxproj -> C:\Users\a\Desktop\C\Virus\Virus\Virus\temp_folder_of_connection\temp_connection_file\Debug\temp_connection_file.exe
