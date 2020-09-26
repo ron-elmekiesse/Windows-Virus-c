@@ -107,7 +107,9 @@ int start_socket()
         printf("Slepping ZZZZZ \n");
 
         //Sleep(ONE_MIN_IN_MILISEC); // sleep for 1 minute
-        Sleep(ONE_MIN_IN_MILISEC / 2); // temp Sleep. -> 30 seconds
+        //Sleep(ONE_MIN_IN_MILISEC / 2); // temp Sleep. -> 30 seconds
+        Sleep(ONE_MIN_IN_MILISEC / 4); // temp Sleep. -> 15 seconds
+
 
     }
 

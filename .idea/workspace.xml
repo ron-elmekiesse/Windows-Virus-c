@@ -33,6 +33,32 @@
       <change beforePath="$PROJECT_DIR$/server_folder/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_folder/App_FastAPI_Server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_folder/my-server-virus-commander" beforeDir="false" afterPath="$PROJECT_DIR$/server_folder/my-server-virus-commander" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_folder/my-server-virus-commander/App_FastAPI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_folder/my-server-virus-commander/App_FastAPI_Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/.vs/temp_connection_file/v16/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/.vs/temp_connection_file/v16/Browse.VC.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/.vs/temp_connection_file/v16/ipch/AutoPCH/5e92750dd4561c67/MAIN.ipch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/.vs/temp_connection_file/v16/ipch/AutoPCH/d13c3a04dec8ac2a/CONNECTION.ipch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/Debug/temp_connection_file.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/Debug/temp_connection_file.ilk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/Debug/temp_connection_file.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Connection.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Connection.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/Connection.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/main.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/temp_con.F2122678.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/temp_con.F2122678.tlog/CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/temp_con.F2122678.tlog/CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/temp_con.F2122678.tlog/link.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/temp_con.F2122678.tlog/link.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/temp_con.F2122678.tlog/link.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/temp_con.F2122678.tlog/temp_connection_file.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/temp_connection_file.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/vc142.idb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/Debug/vc142.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/temp_connection_file.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/temp_connection_file.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_folder_of_connection/temp_connection_file/temp_connection_file/temp_connection_file.vcxproj.user" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/temp_picture.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/temp_picture.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities.c" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities.h" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.h" afterDir="false" />
@@ -245,22 +271,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596125822737" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1601042913222">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1601045138474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601042913222" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1601042913221">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601045138474" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1601045138474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601042913221" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1601042913221">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601045138474" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1601045138474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601042913221" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1601042913222">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601045138474" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1601045138474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601042913222" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601045138474" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1599082190028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
