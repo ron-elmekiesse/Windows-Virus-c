@@ -3,7 +3,7 @@
 #include "StartDoingDamage.h"
 
 
-// function .....
+// function starts the socket and asks for commands to do every few seconds.
 int start_socket();
 
 // This function start the socket connection
@@ -16,12 +16,5 @@ int close_socket(SOCKET* ConnectSocket);
 int send_first_commit_packet(SOCKET* s);
 
 
-// function .....
-int get_command(SOCKET* s, char* return_data);
-
-
-
-
-// NOT IN USE!!
-// function gets the data from the http packet and returns an array of array filled with the data
-//struct MISSIONS* parse_http_packet(char* msg);
+// function that asks the heroku server for commands.
+int get_command(SOCKET* s, char** return_data);
