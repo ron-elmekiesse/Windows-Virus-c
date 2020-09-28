@@ -67,4 +67,3 @@ int setupESCAPI()
 	/* and return the number of capture devices found. */
 	return countCaptureDevices();
 }
-
