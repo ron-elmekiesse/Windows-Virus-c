@@ -1,14 +1,15 @@
 ﻿  Socket.c
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(67,52): warning C4047: 'function': 'char *' differs in levels of indirection from 'char **'
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(67,52): warning C4024: 'get_command': different types for formal and actual parameter 2
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(138,10): warning C4101: 'ipstringbuffer': unreferenced local variable
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(133,21): warning C4101: 'hints': unreferenced local variable
-C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(135,25): warning C4101: 'sockaddr_ipv4': unreferenced local variable
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(136,16): warning C4101: 'sockaddr_ip': unreferenced local variable
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(322,36): warning C4133: 'function': incompatible types - from 'char [16]' to 'LPWSTR'
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(358,5): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(358,5): warning C4024: 'send': different types for formal and actual parameter 4
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(369,63): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(369,63): warning C4024: 'recv': different types for formal and actual parameter 4
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(409,1): warning C4028: formal parameter 2 different from declaration
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(429,5): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
 C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(429,5): warning C4024: 'send': different types for formal and actual parameter 4
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(442,51): warning C4047: 'function': 'int' differs in levels of indirection from 'void *'
+C:\Users\a\Desktop\C\Virus\Virus\Virus\Socket.c(442,51): warning C4024: 'recv': different types for formal and actual parameter 4
   Virus.vcxproj -> C:\Users\a\Desktop\C\Virus\Virus\Debug\Virus.exe

